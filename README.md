@@ -28,3 +28,7 @@
 - Installation de firebase
 - Initialisation Firebase
   |_What do you want to use as your public directory? out
+
+  *** *** *** *** *** *** *** *** *** ***  *** *** *** *** *** *** *** *** *** *** 
+
+Afin d'avoir des classe dynamiques, installation du package clsx 
