@@ -1,5 +1,6 @@
 import { IconProps } from "@/types/iconProps";
 import { clsx } from "clsx";
+import { Spinner } from "../spinner/Spinner";
 
 interface Props {
   size?: "small" | "medium" | "large";
@@ -86,23 +87,41 @@ export const Button = ({
     <>
       <button
         type="button"
-        className={clsx(variantStyles, sizeStyles)}
+        className={clsx(variantStyles, sizeStyles, "relative")}
         onClick={() => console.log("Click")}
         disabled={disabled ? true : false}
       >
-        {icon && variant === "ico" ? (
-          <icon.icon size={icoSize}></icon.icon>
-        ) : (
-          <div className={clsx(icon && "flex items-center gap-1")}>
-            {icon && iconPosition === "left" && (
-              <icon.icon size={icoSize}></icon.icon>
-            )}
-            {children}
-            {icon && iconPosition === "right" && (
-              <icon.icon size={icoSize}></icon.icon>
-            )}
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center cursor-wait">
+            {" "}
+            {/* Fill entire Parent */}
+            <Spinner
+              size={size}
+              variant={
+                variant === "accent" ||
+                (variant === "ico" && iconTheme !== "secondary") 
+                  ? "white"
+                  : "primary"
+              }
+            />
           </div>
         )}
+
+        <div className={clsx(isLoading && "invisible")}>
+          {icon && variant === "ico" ? (
+            <icon.icon size={icoSize}></icon.icon>
+          ) : (
+            <div className={clsx(icon && "flex items-center gap-1")}>
+              {icon && iconPosition === "left" && (
+                <icon.icon size={icoSize}></icon.icon>
+              )}
+              {children}
+              {icon && iconPosition === "right" && (
+                <icon.icon size={icoSize}></icon.icon>
+              )}
+            </div>
+          )}
+        </div>
       </button>
     </>
   );

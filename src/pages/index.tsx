@@ -1,7 +1,12 @@
 import { Seo } from "@/ui/components/Seo";
 import { Button } from "@/ui/design-system/Button/Button";
 import { Typography } from "@/ui/design-system/Typography/Typography";
-import { RiUser6Fill, RiBookmarkLine, RiAwardFill, RiArrowRightLine } from "react-icons/ri";
+import {
+  RiUser6Fill,
+  RiBookmarkLine,
+  RiAwardFill,
+  RiArrowRightLine,
+} from "react-icons/ri";
 
 export default function Home() {
   return (
@@ -29,16 +34,19 @@ export default function Home() {
       </div>
       <div className="flex items-center gap-4 p-10">
         <Button size="small" variant="accent" icon={{ icon: RiArrowRightLine }}>
-          Commencer
+          Inscription
         </Button>
         <Button size="small" variant="secondary">
-          Commencer
+          Inscription
         </Button>
         <Button size="small" variant="outline">
-          Commencer
+          Inscription
+        </Button>
+        <Button size="small" variant="outline" isLoading>
+          Inscription
         </Button>
         <Button size="small" variant="disabled" disabled>
-          Commencer
+          Inscription
         </Button>
         <Button size="small" variant="ico" icon={{ icon: RiUser6Fill }} />
         <Button
@@ -48,6 +56,7 @@ export default function Home() {
           icon={{ icon: RiUser6Fill }}
         />
         <Button
+          isLoading
           iconTheme="gray"
           size="small"
           variant="ico"
@@ -56,15 +65,19 @@ export default function Home() {
       </div>
       <div className="flex items-center gap-4 p-10">
         <Button variant="accent" icon={{ icon: RiArrowRightLine }}>
-          Commencer
+          Inscription
         </Button>
-        <Button variant="secondary">Commencer</Button>
-        <Button variant="outline">Commencer</Button>
+        <Button variant="secondary">Inscription</Button>
+        <Button variant="outline">Inscription</Button>
+        <Button variant="outline" isLoading>
+          Inscription
+        </Button>
         <Button variant="disabled" disabled>
-          Commencer
+          Inscription
         </Button>
         <Button variant="ico" icon={{ icon: RiBookmarkLine }}></Button>
         <Button
+          isLoading
           iconTheme="secondary"
           variant="ico"
           icon={{ icon: RiBookmarkLine }}
@@ -77,18 +90,28 @@ export default function Home() {
       </div>
       <div className="flex items-center gap-4 p-10">
         <Button size="large" variant="accent" icon={{ icon: RiArrowRightLine }}>
-          Commencer
+          Inscription
         </Button>
         <Button size="large" variant="secondary">
-          Commencer
+          Inscription
         </Button>
         <Button size="large" variant="outline">
-          Commencer
+          Inscription
+        </Button>
+        <Button size="large" variant="accent" isLoading>
+          Inscription
+        </Button>
+        <Button size="large" variant="secondary" isLoading>
+          Inscription
+        </Button>
+        <Button size="large" variant="outline" isLoading>
+          Inscription
         </Button>
         <Button size="large" variant="disabled" disabled>
-          Commencer
+          Inscription
         </Button>
         <Button
+          isLoading
           size="large"
           variant="ico"
           icon={{ icon: RiAwardFill }}
