@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: "export"
+  //output: "export" => incompatible avec l'optimization d'image de nextjs
 
 }
 

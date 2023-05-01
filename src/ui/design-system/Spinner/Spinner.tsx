@@ -31,11 +31,7 @@ export const Spinner = ({ size = "medium", variant = "primary" }: Props) => {
 
   return (
     <svg
-      className={clsx(
-        variantStyles,
-        sizeStyles,
-        "animate-spin"
-      )}
+      className={clsx(variantStyles, sizeStyles, "animate-spin")}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

@@ -1,6 +1,6 @@
 import { IconProps } from "@/types/iconProps";
 import { clsx } from "clsx";
-import { Spinner } from "../spinner/Spinner";
+import { Spinner } from "../Spinner/Spinner";
 
 interface Props {
   size?: "small" | "medium" | "large";
