@@ -22,6 +22,12 @@ interface Props {
   component?: "h1" | "h2" | "h3" | "h4" | "h5" | "p" | "span" | "div";
 }
 
+ /**
+  * // Params par default 
+  * @param variant "h3"
+  * @param theme "black"
+  * @param component "div"
+  */
 export const Typography = ({
   variant = "h3",
   children,

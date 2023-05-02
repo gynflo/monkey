@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && firebase deploy",
+    "build": "next build && firebase deploy && scp -r /home/gynflo/Projets/gynflo_monkeys/front-end/out/* gynflo@ubuntu_server:/var/www/html/",
     "start": "next start",
     "lint": "next lint"
   },

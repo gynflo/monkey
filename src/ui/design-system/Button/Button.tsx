@@ -1,6 +1,6 @@
 import { IconProps } from "@/types/iconProps";
 import { clsx } from "clsx";
-import { Spinner } from "../Spinner/Spinner";
+import { Spinner } from "@/ui/design-system";
 
 interface Props {
   size?: "small" | "medium" | "large";
@@ -13,6 +13,11 @@ interface Props {
   children?: React.ReactNode;
 }
 
+ /**
+  * // Params par default 
+  * @param variant "accent"
+  * @param size "medium"
+  */
 export const Button = ({
   size = "medium",
   variant = "accent",
@@ -87,7 +92,7 @@ export const Button = ({
     <>
       <button
         type="button"
-        className={clsx(variantStyles, sizeStyles, "relative")}
+        className={clsx(variantStyles, sizeStyles, "relative animate")}
         onClick={() => console.log("Click")}
         disabled={disabled ? true : false}
       >
