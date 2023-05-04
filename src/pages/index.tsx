@@ -1,4 +1,4 @@
-import { Seo, Navigation } from "@/ui/components";
+import { Seo, Navigation, FooterComponent } from "@/ui/components";
 
 
 export default function Home() {
@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <Seo title="Gynflo Project" description="description"></Seo>
       <Navigation />
+      <FooterComponent></FooterComponent>
     </>
   );
 }
