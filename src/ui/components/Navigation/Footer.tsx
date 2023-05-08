@@ -4,12 +4,19 @@ import { Typography } from "@/ui/design-system";
 import { Container } from "../Container/container";
 import Image from "next/image";
 
-import { footerAppList } from "@/ui/components/Navigation/app_links";
+import { footerLinks } from "@/ui/components/Navigation/app_links";
 import { ActiveLink } from "./Active-link";
+import { FooterLinks } from "@/types";
+
+import { linkTypes } from "@/lib";
 
 interface Props {}
 export function FooterComponent({}: Props) {
   const currentYear = new Date().getFullYear();
+
+  const footerNavigationList = footerLinks.map((footerLink) => (
+    <FooterLink key={uuidv4()} data={footerLink} />
+  ));
 
   return (
     <footer className="bg-gray">
@@ -34,9 +41,7 @@ export function FooterComponent({}: Props) {
             />
           </a>
         </div>
-        <div className="">
-          <FooterLink></FooterLink>
-        </div>
+        <div className="flex gap-7">{footerNavigationList}</div>
       </Container>
       <Container className="pt-9 pb-11 space-y-11">
         <hr className="text-gray-800" />
@@ -54,14 +59,21 @@ export function FooterComponent({}: Props) {
   );
 }
 
-function FooterLink() {
-  const footerComponentList = footerAppList.map((objElement) => (
+/* Composant des liens dans le Footer */
+interface FooterLinkProps {
+  data: FooterLinks;
+}
+
+function FooterLink({ data }: FooterLinkProps) {
+  const footerComponentList = data.links.map((objElement) => (
     <div key={uuidv4()}>
-      {objElement.typeLink === "internal" && (
+      {objElement.typeLink === linkTypes.INTERNAL && (
         <ActiveLink href={objElement.baseUrl}>{objElement.label}</ActiveLink>
       )}
-      {objElement.typeLink === "external" && (
-        <a href={objElement.baseUrl}>{objElement.label}</a>
+      {objElement.typeLink === linkTypes.EXTERNAL && (
+        <a href={objElement.baseUrl} target="_blank">
+          {objElement.label}
+        </a>
       )}
     </div>
   ));
@@ -69,7 +81,7 @@ function FooterLink() {
   return (
     <div className="w-min-[190px]">
       <Typography variant="caption1" theme="white" className="pb-5">
-        Titre
+        {data.label}
       </Typography>
       <Typography variant="caption2" theme="gray" className="space-y-4">
         {footerComponentList}

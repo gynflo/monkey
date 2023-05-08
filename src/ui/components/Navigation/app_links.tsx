@@ -1,88 +1,108 @@
-import { AppLink } from "@/types";
+import { AppLink, FooterLinks } from "@/types";
+import { linkTypes } from "@/lib";
 
-export const footerAppList: AppLink[] = [
+ const footerAppList: AppLink[] = [
   {
     label: "Accueil",
     baseUrl: "/",
-    typeLink: "internal",
+    typeLink: linkTypes.INTERNAL,
   },
   {
     label: "Projets",
     baseUrl: "/#",
-    typeLink: "internal",
+    typeLink: linkTypes.INTERNAL,
   },
   {
     label: "Coders Monkey",
     baseUrl: "/#",
-    typeLink: "internal",
+    typeLink: linkTypes.INTERNAL,
   },
   {
     label: "Formations",
     baseUrl: "/#",
-    typeLink: "external",
+    typeLink: linkTypes.INTERNAL,
   },
 ];
 
-export const footerUsersList: AppLink[] = [
+ const footerUsersList: AppLink[] = [
   {
     label: "Mon espace",
-    baseUrl: "/",
-    typeLink: "internal",
+    baseUrl: "/#",
+    typeLink: linkTypes.INTERNAL,
   },
   {
     label: "Connexion",
     baseUrl: "/#",
-    typeLink: "internal",
+    typeLink: linkTypes.INTERNAL,
   },
   {
     label: "Inscription",
     baseUrl: "/#",
-    typeLink: "internal",
+    typeLink: linkTypes.INTERNAL,
   },
   {
     label: "Mot de passe oublié",
     baseUrl: "/#",
-    typeLink: "internal",
+    typeLink: linkTypes.INTERNAL,
   },
 ];
 
-export const footerInfoList: AppLink[] = [
+ const footerInfoList: AppLink[] = [
   {
     label: "CGU",
-    baseUrl: "/",
-    typeLink: "internal",
+    baseUrl: "/#",
+    typeLink: linkTypes.INTERNAL,
   },
   {
     label: "Confidentialité",
     baseUrl: "/#",
-    typeLink: "internal",
+    typeLink: linkTypes.INTERNAL,
   },
   {
     label: "A propos",
     baseUrl: "/#",
-    typeLink: "internal",
+    typeLink: linkTypes.INTERNAL,
   },
   {
     label: "Contact",
     baseUrl: "/#",
-    typeLink: "internal",
+    typeLink: linkTypes.INTERNAL,
   },
 ];
 
-export const footerSocialNetworkList: AppLink[] = [
+ const footerSocialNetworkList: AppLink[] = [
   {
     label: "Youtube",
     baseUrl: "https://youtube.com",
-    typeLink: "external",
+    typeLink: linkTypes.EXTERNAL,
   },
   {
     label: "Linkedin",
     baseUrl: "https://linkedin.com",
-    typeLink: "external",
+    typeLink: linkTypes.EXTERNAL,
   },
   {
     label: "Slack",
     baseUrl: "/http://slack.com",
-    typeLink: "external",
+    typeLink: linkTypes.EXTERNAL,
+  },
+];
+
+export const footerLinks: FooterLinks[] = [
+  {
+    label: "App",
+    links: footerAppList,
+  },
+  {
+    label: "Utilisateurs",
+    links: footerUsersList,
+  },
+  {
+    label: "Informations",
+    links: footerInfoList,
+  },
+  {
+    label: "Réseaux",
+    links: footerSocialNetworkList,
   },
 ];
