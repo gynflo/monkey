@@ -1,14 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
 
 import { Typography } from "@/ui/design-system";
-import { Container } from "../Container/container";
 import Image from "next/image";
-
+import { Container } from "../Container/container";
 import { footerLinks } from "@/ui/components/Navigation/app_links";
-import { ActiveLink } from "./Active-link";
-import { FooterLinks } from "@/types";
-
+import { SocialNetworksButtons } from "./Social_networks_button";
 import { linkTypes } from "@/lib";
+import { FooterLinks } from "@/types";
+import { ActiveLink } from "./Active-link";
 
 interface Props {}
 export function FooterComponent({}: Props) {
@@ -52,7 +51,9 @@ export function FooterComponent({}: Props) {
               Propulsed by Florian Ginet - CODERS monkey Auto-entrepreneur
             </a>
           </Typography>
-          <div className=""></div>
+          <div className="">
+            <SocialNetworksButtons theme="gray" />
+          </div>
         </div>
       </Container>
     </footer>
@@ -64,7 +65,7 @@ interface FooterLinkProps {
   data: FooterLinks;
 }
 
-function FooterLink({ data }: FooterLinkProps) {
+export function FooterLink({ data }: FooterLinkProps) {
   const footerComponentList = data.links.map((objElement) => (
     <div key={uuidv4()}>
       {objElement.typeLink === linkTypes.INTERNAL && (
