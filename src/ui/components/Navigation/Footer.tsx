@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 import { Typography } from "@/ui/design-system";
 import Image from "next/image";
 import { Container } from "../Container/container";
-import { footerLinks } from "@/ui/components/Navigation/app_links";
-import { SocialNetworksButtons } from "./Social_networks_button";
+import { footerLinks } from "@/ui/components/Navigation/App-links";
+import { SocialNetworksButtons } from "./Social-networks-button";
 import { linkTypes } from "@/lib";
 import { FooterLinks } from "@/types";
 import { ActiveLink } from "./Active-link";
@@ -14,7 +14,7 @@ export function FooterComponent({}: Props) {
   const currentYear = new Date().getFullYear();
 
   const footerNavigationList = footerLinks.map((footerLink) => (
-    <FooterLink key={uuidv4()} data={footerLink} />
+    <FooterLink  key={uuidv4()} data={footerLink} />
   ));
 
   return (
@@ -52,7 +52,7 @@ export function FooterComponent({}: Props) {
             </a>
           </Typography>
           <div className="">
-            <SocialNetworksButtons theme="gray" />
+            <SocialNetworksButtons theme="gray"  />
           </div>
         </div>
       </Container>

@@ -22,6 +22,7 @@ interface Props {
  * Params par default
  * @param variant "accent"
  * @param size "medium"
+ * @param iconPosition "right"
  */
 export const Button = ({
   size = "medium",

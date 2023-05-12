@@ -5,7 +5,7 @@ interface Props {
 
 import Head from "next/head";
 
-export const Seo = ({ title, description }: Props) => {
+export function Seo({ title, description }: Props) {
   return (
     <Head>
       <title>{title}</title>
@@ -17,4 +17,4 @@ export const Seo = ({ title, description }: Props) => {
       <link rel="icon" href="/favicon.ico"></link>
     </Head>
   );
-};
+}

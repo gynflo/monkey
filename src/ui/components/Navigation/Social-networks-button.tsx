@@ -1,5 +1,5 @@
 import { Button } from "@/ui/design-system";
-import { footerSocialNetworkList } from "./app_links";
+import { footerSocialNetworkList } from "./App-links";
 import { v4 as uuidv4 } from "uuid";
 import clsx from "clsx";
 import { RiQuestionMark } from "react-icons/ri";
