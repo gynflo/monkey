@@ -6,7 +6,7 @@ import Link from "next/link";
 
 interface Props {
   size?: "small" | "medium" | "large";
-  variant?: "accent" | "secondary" | "outline" | "disabled" | "ico";
+  variant?: "accent" | "secondary" | "outline" | "disabled" | "ico" | "success";
   icon?: IconProps;
   iconTheme?: "accent" | "secondary" | "gray";
   iconPosition?: "left" | "right";
@@ -49,6 +49,9 @@ export const Button = ({
       variantStyles =
         "bg-primary-200 hover:bg-primary-300/50 text-primary rounded";
       break;
+    case "success":
+      variantStyles = "bg-secondary hover:bg-secondary-400 text-white rounded";
+      break;
     case "outline":
       variantStyles =
         "bg-white hover:bg-gray-400/50 border border-gray-500 text-gray rounded";
@@ -57,6 +60,7 @@ export const Button = ({
       variantStyles =
         "bg-gray-400 border border-gray-500 text-gray-600 rounded cursor-not-allowed";
       break;
+
     case "ico":
       if (iconTheme === "accent") {
         variantStyles =
