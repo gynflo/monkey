@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Seo title="Gynflo Project" description="description"></Seo>
-      <Layout>
+      <Layout isDisplayBreadcrumbs={false}>
         <LandingPageContainer />
       </Layout>
     </>
