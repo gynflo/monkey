@@ -19,7 +19,13 @@ export function CallToActionView() {
           </div>
         </div>
         <div>
-            <Image alt="Illustration d'une bombe sur le point dexploser" width={1210} height={1210} src={"/assets/svg/bomb.svg"} className="absolute -bottom-[430px] -right-[250px]"/>
+          <Image
+            alt="Illustration d'une bombe sur le point d'exploser"
+            width={1210}
+            height={1210}
+            src={"/assets/svg/bomb.svg"}
+            className="absolute -bottom-[490px] -right-[250px]"
+          />
         </div>
       </Container>
     </div>
