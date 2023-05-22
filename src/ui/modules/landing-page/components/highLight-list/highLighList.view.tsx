@@ -24,7 +24,10 @@ export function HighLightListView() {
             <ListPoint>Gagne de l’assurance.</ListPoint>
           </div>
           <div className="relative inline-block">
-            <Button baseUrl="#" icon={{ icon: RiArrowRightLine }}>
+            <Button
+              baseUrl="/connexion/inscription"
+              icon={{ icon: RiArrowRightLine }}
+            >
               Let&apos;go
             </Button>
             <Image
@@ -56,7 +59,7 @@ export function HighLightListView() {
           </div>
           <div className="relative inline-block">
             <Button
-              baseUrl="#"
+              baseUrl="/connexion/inscription"
               icon={{ icon: RiArrowRightLine }}
               variant="secondary"
             >

@@ -39,12 +39,12 @@ export function Navigation({}: Props) {
               <ActiveLink href="#">Contatcs</ActiveLink>
             </Typography>
             <div className="flex items-center gap-2">
-              <Button size="small" variant="secondary">
+              <Button size="small" variant="secondary" baseUrl="/connexion">
                 Connexion
               </Button>
             </div>
             <div className="flex items-center gap-2">
-              <Button size="small">Rejoindre</Button>
+              <Button size="small" baseUrl="/connexion/inscription">Rejoindre</Button>
             </div>
           </div>
         </Container>

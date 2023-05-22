@@ -3,7 +3,7 @@ import { Navigation } from "../Navigation/Navigation";
 import { Breadcrumbs } from "../breadcrumbs/bredcrumbs";
 
 interface LayoutProps {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   isDisplayBreadcrumbs?: boolean;
 }
 

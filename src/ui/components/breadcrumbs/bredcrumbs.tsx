@@ -11,8 +11,6 @@ import Link from "next/link";
 export function Breadcrumbs() {
   const router = useRouter();
   const asPath = router.asPath;
-  console.log("🚀 ~ file: bredcrumbs.tsx:12 ~ Breadcrumbs ~ asPath:", asPath);
-
   const asPathSegment = asPath.split("/");
   const lastAsPathSegment = asPathSegment[asPathSegment.length - 1];
   asPathSegment[0] = "accueil";

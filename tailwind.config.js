@@ -75,7 +75,7 @@ module.exports = {
           fontWeight: "500"
         }
       ],
-      "2xl": [
+      "3xl": [
         "36px",
         {
           lineHeight: "44px",

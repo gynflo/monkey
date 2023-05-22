@@ -37,17 +37,17 @@ const footerUsersList: AppLink[] = [
   },
   {
     label: "Connexion",
-    baseUrl: "/#",
+    baseUrl: "/connexion",
     typeLink: linkTypes.INTERNAL,
   },
   {
     label: "Inscription",
-    baseUrl: "/#",
+    baseUrl: "/connexion/inscription",
     typeLink: linkTypes.INTERNAL,
   },
   {
     label: "Mot de passe oublié",
-    baseUrl: "/#",
+    baseUrl: "/connexion/mots-de-passe-perdus",
     typeLink: linkTypes.INTERNAL,
   },
 ];
