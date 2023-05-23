@@ -5,7 +5,13 @@ import { LoginForm } from "./login-form";
 import Image from "next/image";
 import Link from "next/link";
 
-export function LoginView() {
+import type { FormsType } from "@/types/forms";
+
+interface Props {
+  form: FormsType;
+}
+
+export function LoginView({ form }: Props) {
   return (
     <Container className="grid grid-cols-2 gap-20 mb-20">
       <div className="flex items-center">
@@ -34,7 +40,7 @@ export function LoginView() {
               </Typography>
             </div>
           </div>
-          <LoginForm />
+          <LoginForm form={form} />
         </Box>
       </div>
     </Container>

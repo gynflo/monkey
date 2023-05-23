@@ -4,8 +4,13 @@ import { Box } from "@/ui/design-system/Box";
 import Image from "next/image";
 import Link from "next/link";
 import { RegisterForm } from "./register-form";
+import type { FormsType } from "@/types/forms";
 
-export function RegisterView() {
+interface Props {
+  form: FormsType;
+}
+
+export function RegisterView({ form }: Props) {
   return (
     <Container className="grid grid-cols-2 gap-20 mb-20">
       <div className="flex items-center">
@@ -34,7 +39,7 @@ export function RegisterView() {
               </Typography>
             </div>
           </div>
-          <RegisterForm/>
+          <RegisterForm form={form} />
         </Box>
       </div>
     </Container>

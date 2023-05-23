@@ -33,7 +33,7 @@ export function FooterComponent({}: Props) {
           </Typography>
           <a href="https://youtube.com" target="_blank">
             <Image
-              alt="Imaage Youtube"
+              alt="Image Youtube"
               src="/assets/svg/YTB.svg"
               width={230}
               height={216}

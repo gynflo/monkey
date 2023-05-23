@@ -10,12 +10,14 @@ interface Props {
   icon?: IconProps;
   iconTheme?: "accent" | "secondary" | "gray";
   iconPosition?: "left" | "right";
-  disabled?: Boolean;
-  isLoading?: Boolean;
+  disabled?: boolean;
+  isLoading?: boolean;
   children?: React.ReactNode;
   baseUrl?: string;
   linkType?: LinkType;
   action?: Function;
+  type?: "button" | "submit";
+  fullWidth?: boolean;
 }
 
 /**
@@ -35,6 +37,8 @@ export const Button = ({
   children,
   baseUrl,
   linkType = "internal",
+  type = "button",
+  fullWidth,
   action = () => {},
 }: Props) => {
   let variantStyles,
@@ -110,7 +114,7 @@ export const Button = ({
   const buttonContent = (
     <>
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center cursor-wait">
+        <div className="absolute inset-0 flex items-center justify-center">
           {" "}
           {/* Fill entire Parent */}
           <Spinner
@@ -146,8 +150,14 @@ export const Button = ({
   const buttonElement = (
     <>
       <button
-        type="button"
-        className={clsx(variantStyles, sizeStyles, "relative animate")}
+        type={type}
+        className={clsx(
+          variantStyles,
+          sizeStyles,
+          isLoading && "cursor-not-allowed",
+          fullWidth && "w-full",
+          "relative animate"
+        )}
         onClick={handleClick}
         disabled={disabled ? true : false}
       >
@@ -164,9 +174,8 @@ export const Button = ({
         </a>
       );
     } else {
-      return <Link href={baseUrl}>{buttonElement}</Link>
+      return <Link href={baseUrl}>{buttonElement}</Link>;
     }
   }
-
   return <>{buttonElement}</>;
 };

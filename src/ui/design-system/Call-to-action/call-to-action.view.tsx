@@ -1,6 +1,6 @@
 import { Container } from "@/ui/components";
 import { Typography } from "../Typography/Typography";
-import { Button } from "../Button/Button";
+import { Button } from "../Button";
 import { linkTypes } from "@/lib";
 import Image from "next/image";
 

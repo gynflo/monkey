@@ -5,7 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ForgetPasswordForm } from "./forget-password-form";
 
-export function ForgetPasswordView() {
+import type { FormsType } from "@/types/forms";
+
+interface Props {
+  form: FormsType;
+}
+
+export function ForgetPasswordView({ form }: Props) {
   return (
     <Container className="grid grid-cols-2 gap-20 mb-20">
       <div className="flex items-center">
@@ -29,7 +35,7 @@ export function ForgetPasswordView() {
               <Link href={"/connexion"}>Connexion</Link>
             </Typography>
           </div>
-          <ForgetPasswordForm />
+          <ForgetPasswordForm form={form} />
         </Box>
       </div>
     </Container>

@@ -17,17 +17,25 @@ interface Props {
     | "caption3"
     | "caption4";
   children: React.ReactNode;
-  theme?: "black" | "white" | "gray" | "primary" | "secondary";
+  theme?:
+    | "black"
+    | "white"
+    | "gray"
+    | "primary"
+    | "secondary"
+    | "success"
+    | "warning"
+    | "danger";
   className?: string;
   component?: "h1" | "h2" | "h3" | "h4" | "h5" | "p" | "span" | "div";
 }
 
- /**
-  * // Params par default 
-  * @param variant "h3"
-  * @param theme "black"
-  * @param component "div"
-  */
+/**
+ * // Params par default
+ * @param variant "h3"
+ * @param theme "black"
+ * @param component "div"
+ */
 export const Typography = ({
   variant = "h3",
   children,
@@ -35,7 +43,7 @@ export const Typography = ({
   theme = "black",
   component: Component = "div",
 }: Props) => {
-  let variantStyles,colorStyles: string;
+  let variantStyles, colorStyles: string;
 
   switch (theme) {
     case "black": // default
@@ -52,6 +60,15 @@ export const Typography = ({
       break;
     case "secondary":
       colorStyles = "text-secondary";
+      break;
+    case "success":
+      colorStyles = "text-alert-success";
+      break;
+    case "warning":
+      colorStyles = "text-alert-warning";
+      break;
+    case "danger":
+      colorStyles = "text-alert-danger";
       break;
   }
 
