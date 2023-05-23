@@ -12,7 +12,7 @@ export function LoginContainer() {
     register,
     setError,
     reset,
-  } = useForm<RegisterFormFieldsType>();
+  } = useForm<LoginFormFieldsType>();
 
   const onSubmit: SubmitHandler<LoginFormFieldsType> = (formData) => {
     setIsLoading(true);
