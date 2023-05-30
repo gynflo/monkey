@@ -3,6 +3,10 @@ import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import { ForgetPasswordView } from "./forget-password.view";
+import { sendEmailToResetPassword } from "@/api/firebase/authentication";
+import { isReturnStatement } from "typescript";
+import { toast } from "react-toastify";
+import router, { Router } from "next/router";
 
 export function ForgetPasswordContainer() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -11,17 +15,25 @@ export function ForgetPasswordContainer() {
     handleSubmit,
     formState: { errors },
     register,
-    setError,
     reset,
   } = useForm<ForgetPasswordFormFieldsType>();
 
+  async function handleResetPassword({ email }: ForgetPasswordFormFieldsType) {
+    const { error } = await sendEmailToResetPassword(email);
+    if (error) {
+      setIsLoading(false);
+      toast.error(error.message);
+      return;
+    }
+    toast.success(`Un email de réinitialisation vous a été envoyé à ${email}`);
+    setIsLoading(false);
+    reset();
+    router.push("/connexion");
+  }
+
   const onSubmit: SubmitHandler<ForgetPasswordFormFieldsType> = (formData) => {
     setIsLoading(true);
-    console.log(
-      "🚀 ~ file: register.container.tsx:18 ~ onSubmit ~ formData:",
-      formData
-    );
-    setIsLoading(false);
+    handleResetPassword(formData);
   };
   return (
     <ForgetPasswordView

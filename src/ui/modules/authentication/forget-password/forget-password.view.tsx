@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ForgetPasswordForm } from "./forget-password-form";
 
 import type { FormsType } from "@/types/forms";
+import { useToggle } from "@/hooks/";
 
 interface Props {
   form: FormsType;

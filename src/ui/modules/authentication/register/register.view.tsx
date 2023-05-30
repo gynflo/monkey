@@ -30,7 +30,7 @@ export function RegisterView({ form }: Props) {
               Inscription
             </Typography>
 
-            <div>
+            <div className="flex items-center gap-2">
               <Typography variant="caption4" component="span" theme="gray">
                 Tu as déja un compte ?
               </Typography>
@@ -40,6 +40,18 @@ export function RegisterView({ form }: Props) {
             </div>
           </div>
           <RegisterForm form={form} />
+          <Typography variant="caption4" theme="gray" className="max-w-md mx-auto space-y-1 text-center">
+            <div>En t&apos;inscrivant, tu acceptes les</div>
+            <div>
+              <Link href={"#"} className="text-gray">
+                Conditions d&apos;utilisation
+              </Link>
+              {" "} et la {" "}
+              <Link href={"#"} className="text-gray">
+                politique de confifentialité.
+              </Link>
+            </div>
+          </Typography>
         </Box>
       </div>
     </Container>

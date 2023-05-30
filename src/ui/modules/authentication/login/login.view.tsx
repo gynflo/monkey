@@ -31,7 +31,7 @@ export function LoginView({ form }: Props) {
               Connexion
             </Typography>
 
-            <div>
+            <div className="flex items-center gap-2">
               <Typography variant="caption4" component="span" theme="gray">
                 Tu n&apos;as pas de compte ?
               </Typography>
@@ -41,6 +41,9 @@ export function LoginView({ form }: Props) {
             </div>
           </div>
           <LoginForm form={form} />
+          <Typography variant="caption4" theme="primary">
+            <Link href={"/connexion/mot-de-passe-perdu"} className="flex justify-center ">Mot de passe perdu ?</Link>
+          </Typography>
         </Box>
       </div>
     </Container>

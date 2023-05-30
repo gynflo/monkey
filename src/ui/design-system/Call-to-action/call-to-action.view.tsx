@@ -10,7 +10,7 @@ export function CallToActionView() {
       <Container className="py-20">
         <div className="relative z-10 max-w-3xl space-y-5">
           <Typography variant="h2" component="h2" theme="white">
-            N&apos;attend pas pour développer tes compétences...
+            N&apos;attends pas pour développer tes compétences...
           </Typography>
           <div>
             <Button variant="success" baseUrl="#" linkType={linkTypes.EXTERNAL}>
