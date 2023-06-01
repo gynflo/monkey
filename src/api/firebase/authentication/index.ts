@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  sendEmailVerification,
   sendPasswordResetEmail,
 } from "firebase/auth";
 
@@ -70,6 +71,30 @@ export async function signOutUserByFirebase() {
   }
 }
 
+export async function sendEmailVerificationByFirebase() {
+  if (auth.currentUser) {
+    try {
+      await sendEmailVerification(auth.currentUser);
+      return { data: true };
+    } catch (error) {
+      const firebaseError = error as FirebaseError;
+      return {
+        error: {
+          code: firebaseError.code,
+          message: firebaseError.message,
+        },
+      };
+    }
+  } else {
+    return {
+      error: {
+        code: "Unknown",
+        message: "Une erreur est survenue"
+      }
+    }
+  }
+}
+
 export async function sendEmailToResetPassword(email: string) {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -84,3 +109,4 @@ export async function sendEmailToResetPassword(email: string) {
     };
   }
 }
+
