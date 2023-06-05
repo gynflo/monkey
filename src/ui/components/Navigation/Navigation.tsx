@@ -1,10 +1,12 @@
+import { useAuth } from "@/context/AuthUserProvider";
 import { Container, ActiveLink } from "@/ui/components";
 import { Button, Logo, Typography } from "@/ui/design-system";
-
 
 interface Props {}
 
 export function Navigation({}: Props) {
+  const { authUser, authUserIsLoading } = useAuth();
+
   return (
     <>
       <nav className="border-b-2 border-gray-400">
@@ -38,13 +40,16 @@ export function Navigation({}: Props) {
               <ActiveLink href="#">Formation</ActiveLink>
               <ActiveLink href="#">Contatcs</ActiveLink>
             </Typography>
+
             <div className="flex items-center gap-2">
               <Button size="small" variant="secondary" baseUrl="/connexion">
                 Connexion
               </Button>
             </div>
             <div className="flex items-center gap-2">
-              <Button size="small" baseUrl="/connexion/inscription">Rejoindre</Button>
+              <Button size="small" baseUrl="/connexion/inscription">
+                Rejoindre
+              </Button>
             </div>
           </div>
         </Container>
