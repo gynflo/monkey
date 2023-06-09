@@ -5,6 +5,7 @@ export interface UserDocument {
   email: string;
   howYouKnewUs: string;
   created_at: Timestamp;
+  onboardingIsCompleted: boolean;
 }
 
 export interface UserInterface {

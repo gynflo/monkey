@@ -27,7 +27,7 @@ export const Avatar = ({ size = "medium", src, alt }: Props) => {
       <Image
         fill
         className=" object-cover object-center rounded-full" // object-cover object-center => gère les images trop grandes
-        src={src}
+        src={src ? src : "/assets/svg/baril.svg"}
         alt={alt}
       />
     </div>

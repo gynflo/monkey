@@ -1,3 +1,4 @@
+import { GUEST } from "@/lib";
 import { Seo, Layout } from "@/ui/components";
 import { LoginContainer } from "@/ui/modules/authentication/login/login.container";
 
@@ -8,7 +9,7 @@ export default function Connexion() {
         title="Connexion sur Coders Gynflo"
         description="Page de Connexion au compte"
       ></Seo>
-      <Layout>
+      <Layout sessionStatus={GUEST}>
         <LoginContainer></LoginContainer>
       </Layout>
     </>

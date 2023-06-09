@@ -1,11 +1,25 @@
 import { useAuth } from "@/context/AuthUserProvider";
 import { Container, ActiveLink } from "@/ui/components";
 import { Button, Logo, Typography } from "@/ui/design-system";
+import { AccountAvatarNavigationLink } from "@/ui/components/Navigation";
 
 interface Props {}
 
 export function Navigation({}: Props) {
-  const { authUser, authUserIsLoading } = useAuth();
+  const { authUser } = useAuth();
+  console.log("🚀 ~ file: Navigation.tsx:9 ~ Navigation ~ authUser:", authUser);
+
+  const authentificationButtons = (
+    <div className="flex items-center gap-2">
+      <Button size="small" variant="secondary" baseUrl="/connexion">
+        Connexion
+      </Button>
+
+      <Button size="small" baseUrl="/connexion/inscription">
+        Rejoindre
+      </Button>
+    </div>
+  );
 
   return (
     <>
@@ -41,16 +55,11 @@ export function Navigation({}: Props) {
               <ActiveLink href="#">Contatcs</ActiveLink>
             </Typography>
 
-            <div className="flex items-center gap-2">
-              <Button size="small" variant="secondary" baseUrl="/connexion">
-                Connexion
-              </Button>
-            </div>
-            <div className="flex items-center gap-2">
-              <Button size="small" baseUrl="/connexion/inscription">
-                Rejoindre
-              </Button>
-            </div>
+            {!authUser ? (
+              authentificationButtons
+            ) : (
+              <AccountAvatarNavigationLink />
+            )}
           </div>
         </Container>
       </nav>

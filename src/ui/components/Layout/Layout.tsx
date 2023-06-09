@@ -5,17 +5,21 @@ import {
   NavigationSidebarUserAccount,
 } from "@/ui/components/Navigation";
 import { Breadcrumbs } from "@/ui/components/breadcrumbs";
+import {Session} from "../session";
+import type { SessionStatus } from "@/types";
 
 interface LayoutProps {
   children: React.ReactNode;
   isDisplayBreadcrumbs?: boolean;
   withSidebar?: boolean;
+  sessionStatus?: SessionStatus;
 }
 
 export function Layout({
   children,
   isDisplayBreadcrumbs = true,
   withSidebar,
+  sessionStatus,
 }: LayoutProps) {
   let view: React.ReactElement = <></>;
 
@@ -34,11 +38,11 @@ export function Layout({
     view = <>{children}</>;
   }
   return (
-    <>
+    <Session sessionStatus={sessionStatus}>
       <Navigation />
       {isDisplayBreadcrumbs && <Breadcrumbs />}
       {view}
       <FooterComponent />
-    </>
+    </Session>
   );
 }
